@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'Neutrif Pro';
+  src: local('NeutrifPro-Bold'),
+      url('NeutrifPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Soft';
+  src: local('Proxima Soft Bold'), local('ProximaSoft-Bold'),
+      url('ProximaSoft-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neutrif Pro';
+  src: local('NeutrifPro-Medium'),
+      url('NeutrifPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body{
+  background-color: #ebf0f3;
+}
+.middle-header{
+  height: 100%;
+  flex-grow: 2;
+  max-width:60%;
+  border-left:solid 2px #ebf0f3;
+  border-right:solid 2px #ebf0f3;
+  margin: 0 32px 0 32px;
+  box-sizing:border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.color-choice{
+  box-sizing:border-box;
+  width: 90%;
+  height:32px;
+
+  display:flex;
+  justify-content: space-between;
+}
+.color-palette{
+  display:flex;
+
+}
+.lock-box{
+  width:100%;
+  height:15px;
+  position: absolute;
+  top:34px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.lock{
+  height:100%;
+  width:15px;
+}
+.lock[data-state=true]{
+  -webkit-mask : url("./Lock.png") no-repeat center;
+  mask: url("./Lock.png") no-repeat center;
+  mask-size:100%;
+  mask-position:center;
+  background-color: #1D1B26;
+  transition:0.15s ease;
+}
+.lock[data-state=false]{
+  -webkit-mask : url("./Lock\ Off.png") no-repeat center;
+  mask: url("./Lock\ Off.png") no-repeat center;
+  mask-size:100%;
+  mask-position:center;
+  background-color: #c2c2c2;
+  transition:0.15s ease;
+}
+.current-color{
+  display: flex;
+  align-items: center;
+}
+.color-sample{
+  position: relative;
+  width:54px;
+  height: 100%;
+  background-color: #4e44ce;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+.color-sample.current{
+  margin-right:8px;
+  border-radius: 4px;
+  
+}
+.color-sample[data-index='0']{
+  border-radius:4px 0 0 4px;
+}
+.color-sample[data-index='4']{
+  border-radius:0px 4px 4px 0px;
+}
+.color-sample.current:hover{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.06) 0 0);
+  transition: 0.25s ease;
+}
+.App-header h3{
+  color:#1D1B26;
+  padding: 0px;
+  margin: 0px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.App-header .logo{
+  width:35px;
+  height:35px;
+  -webkit-mask : url("./plaette\ logo.png") no-repeat center;
+  mask: url("./plaette\ logo.png") no-repeat center;
+  mask-size:100%;
+  mask-position:center;
+  background-color: #c2c2c2;
+  cursor:pointer;
+  transition:0.25s ease;
+}
+.App-header h4{
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  font-family: 'Proxima Soft';
+  font-style: bold;
+  margin:0 8px 0 8px;
+  color:#c2c2c2;
+}
+.App-header h4.dark{
+  color:#1D1B26;
+}
+.App-header h3:hover{
+  color:#38384d;
+  transition: 0.25s ease;
+}
+.App-header{
+  height: 72px;
+  width:100vw;
+  background-color: #FFF;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+
+}
+.left-header{
+  width:max-content;
+  height: 100%;
+  margin-left: 32px;
+  font-family: 'Proxima Soft';
+  font-weight: bold;  
+  display:flex;
+  align-items: center;
+  gap:12px;
+}
+.right-header{
+  margin-right: 32px;
+
+}
+.main{
+  padding-right: 32px;
+  padding-left: 32px;
+  box-sizing: border-box;
+  background-clip: content-box;
+  width:100%;
+  height:calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  
+}
+.row{
+  display: flex;
+}
+.box{
+  height:8px;
+  width:8px;
+  background-color: red;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.artboard{
+  box-shadow: 0 0 10px 4px rgba(0,0,0,.4); 
+}
+.box:hover{
+  transform: scale(1.5);
+  transition: 0.3s ease;
+  box-shadow: 0 0 4px 2px rgba(2,2,2,0.2);  
+}
